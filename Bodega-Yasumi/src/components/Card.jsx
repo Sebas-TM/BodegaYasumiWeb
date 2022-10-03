@@ -1,12 +1,15 @@
-import React from 'react'
+import React from "react";
 
 const Card = () => {
   return (
-    <>
-        <h1>Hola mundo</h1>
-        <p>Buenas</p>
-    </>    
+    <section>
+      <div>
+        ICON
+      </div>
+      <p>TITLE</p>
+      <p>$1,310</p>
+    </section>
   )
 }
 
-export default Card
+export default Card;
