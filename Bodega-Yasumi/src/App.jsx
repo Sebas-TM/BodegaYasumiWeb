@@ -1,3 +1,4 @@
+import "./assets/css/App.css"
 import "./assets/scss/base/App.scss";
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'

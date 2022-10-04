@@ -16,6 +16,8 @@
 html {
     font-size: 62.5%;
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 *,
@@ -29,6 +31,7 @@ body {
     font-size: 1.6rem;
     line-height: 2;
     background-color: var(--color-fondo);
+    margin: 0;
 }
 
 
