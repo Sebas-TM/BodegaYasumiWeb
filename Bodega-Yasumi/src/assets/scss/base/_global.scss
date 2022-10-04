@@ -1,5 +1,77 @@
-$Font1: "poppins", sans-serif;
-$color-dark-db: #1A1A1A;
-$color-light-db: #FFFFFF;
-$color-primary-db: #F25AC9;
-$color-secondary-db: #A55FEB;
+// $Font1: "poppins", sans-serif;
+// $color-dark-db: #1A1A1A;
+// $color-light-db: #FFFFFF;
+// $color-primary-db: #F25AC9;
+// $color-secondary-db: #A55FEB;
+// :root {
+$blanco: #fff;
+$negro: #000;
+$color-principal: #FF3233;
+$color-principalOscuro: #b02121;
+$color-secundario: #1f1f1f;
+$color-header-texto: #c6c7cc;
+$color-terciario: #CEDFD9;
+$color-fondo: #fafafa;
+$color-letra: #626262;
+$fuentePrincipal: 'Fjalla One', sans-serif;
+$fuente: 'Open Sans', sans-serif;
+$fuenteSecundaria: 'PT Sans', sans-serif;
+// }
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: var(--fuentePrincipal);
+    font-size: 1.6rem;
+    line-height: 2;
+    background-color: var(--color-fondo);
+}
+
+/*Globales*/
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 4.8rem;
+}
+
+h2 {
+    font-size: 4.8rem;
+}
+
+h3 {
+    font-size: 3.2rem;
+}
+
+h4 {
+    font-size: 2.8rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--fuenteSecundaria);
+}
+
+img {
+    max-width: 100%;
+}
+
+.contenedor {
+    max-width: 120rem;
+    width: 90%;
+    margin: 0 auto;
+    z-index: 1;
+}
