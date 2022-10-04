@@ -1,14 +1,21 @@
-import { useState } from 'react'
 import './assets/css/App.css'
-import Footer from './components/Footer'
 import "./assets/scss/base/App.scss";
-import Dashboard from './pages/Dashboard/Dashboard';
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
 import Home from './pages/Home/Home';
+import Dashboard from './pages/Dashboard/Dashboard'
+import Cart from './pages/Cart/Cart'
 
 function App() {
-
-  return(
-    <Home/>
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/dashboard' element={<Dashboard />} />
+        <Route path='/cart' element={<Cart />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
