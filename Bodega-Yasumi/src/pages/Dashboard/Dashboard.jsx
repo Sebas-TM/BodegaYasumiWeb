@@ -1,41 +1,69 @@
 import React from "react";
 import Card from "../../components/Card";
 import InfoCard from "../../components/InfoCard";
+import { FaSignOutAlt as IconLogout} from "react-icons/fa";
+import { FaBars as IconBars} from "react-icons/fa";
+import { MdOutlineDarkMode as IconDark } from "react-icons/md";
+import { IoNotificationsOutline as IconNotification } from "react-icons/io5";
+import { BsInfoCircleFill as IconInfo } from "react-icons/bs";
+import { HiHome as IconHome } from "react-icons/hi";
+import { HiUsers as IconUsers } from "react-icons/hi";
+import { FaUser as IconUser } from "react-icons/fa";
 
 const Dashboard = () => {
   return (
-    <section>
-      <section>
-        <h1>LOGO</h1>
-        <nav>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
+    <section className='admin'>
+      <section className='admin__menu'>
+        <h1 className='admin__logo'>LOGO</h1>
+        <nav className='admin__nav'>
+          <li className='admin__li'>
+            <IconHome/>
+            Resumen
+          </li>
+          <li className='admin__li'>
+            <IconUsers/>
+            Usuarios
+          </li>
+          <li className='admin__li'>Resumen</li>
+          <li className='admin__li'>Resumen</li>
+          <li className='admin__li'>
+            <IconUser/>
+            Perfil
+          </li>
         </nav>
-        <div>
+        <div className='admin__logout'>
+          <IconLogout/>
           LOGOUT
         </div>
       </section>
-      <section>
-        <header>
-          <section>BARS</section>
-          <section>
-            <div>
-              <div>MONEDA</div>
-              <div>IDIOMA</div>
-            </div>
-            <div>TEMA</div>
+      <section className='admin__container'>
+        <header className='admin__header'>
+          <section className='button__header'>
+            <IconBars/>
           </section>
-          <section>CAMPANA</section>
-          <section>PERFIL</section>
+          <section className='admin__config'>
+            <div className='admin__config-buttons'>
+              <div className='button__header'>SOLES</div>
+              <div className='button__header'>ES</div>
+            </div>
+            <div className='button__header'>
+              <IconDark/>
+            </div>
+          </section>
+          <section className='button__header'>
+            <IconNotification/>
+          </section>
+          <section className='button__header'>
+            <span>Javier V</span>
+            <img src="" alt="Foto de perfil" />
+          </section>
         </header>
-        <h2>Welcome, Javier</h2>
-        <main>
-          <section>
+        <h2 className='admin__title'>Welcome, Javier</h2>
+        <main className='admin__main'>
+          <section className='admin__tablet'>
             <div>
               <img src="" alt="MEDALLA" />
-              <img src="" alt="INFO" />
+              <IconInfo />
             </div>
             <InfoCard/>
             <div>
@@ -47,8 +75,8 @@ const Dashboard = () => {
             <InfoCard/>
             <InfoCard/>
           </section>
-          <section>
-            <section>
+          <section className='admin__resume'>
+            <section className='container__card'>
               <Card/>
               <Card/>
               <Card/>
@@ -57,7 +85,7 @@ const Dashboard = () => {
             <section>
               <img src="" alt="FOTO" />
               <hr />
-              <section>
+              <section className='container__card'>
                 <div>
                   <div>
                     <img src="" alt="GENERIC" />
@@ -69,7 +97,7 @@ const Dashboard = () => {
                   <p>14:00</p>
                 </div>
               </section>
-              <section>
+              <section className='container__card'>
                 <div>
                   <div>
                     <img src="" alt="GENERIC" />

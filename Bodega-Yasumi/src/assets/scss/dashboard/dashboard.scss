@@ -1,0 +1,61 @@
+.admin{
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 300px auto;
+  .admin__menu{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .admin__logo{
+      padding-left: 2rem;
+    }
+    .admin__nav{
+      list-style: none;
+      line-height: 10rem;
+      .admin__li{
+        padding-left: 1rem;
+        margin-left: 1rem;
+      }
+      .admin__li:hover{
+        background-color: red;
+        border-radius: 8px;
+      }
+    }
+    .admin__logout{
+      padding-left: 1rem;
+      margin-left: 1rem;
+    }
+  }
+  .admin__container{
+    .admin__header{
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem;
+      .admin__config{
+        display: flex;
+        gap: 10rem;
+        justify-content: space-between;
+        .admin__config-buttons{
+          display: flex;
+          gap: 1rem;
+        }
+      }
+    }
+    .admin__main{
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      .admin__tablet{
+        .infocard__container{
+          display: flex;
+        }
+      }
+      .admin__resume{
+        .container__card{
+          display: flex;
+          justify-content: space-around;
+        }
+      }
+    }
+  }
+}

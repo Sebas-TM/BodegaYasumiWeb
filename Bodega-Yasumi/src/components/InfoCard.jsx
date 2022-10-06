@@ -2,13 +2,15 @@ import React from "react";
 
 const InfoCard = () => {
   return (
-    <article>
-      <div>MEDALLA</div>
-      <div>
-        <p>TITLE</p>
-        <p>Subtitle</p>
+    <article className='infocard__container'>
+      <div className='infocard__image'>MEDALLA</div>
+      <div className='inforcard__text'>
+        <p className='infocard__title'>TITLE</p>
+        <p className='inforcard__subtitle'>Subtitle</p>
       </div>
-      <div><p>NUMBER</p></div>
+      <div className='infocard__percent'>
+        <p className='infocard__number'>NUMBER</p>
+      </div>
     </article>
   )
 }
