@@ -1,7 +1,9 @@
 .admin{
-  height: 100vh;
+  height: 100vh; 
   display: grid;
   grid-template-columns: 300px auto;
+  background-color: rgb(43, 45, 55);
+  color: white;
   .admin__menu{
     height: 100vh;
     display: flex;
@@ -9,17 +11,34 @@
     justify-content: space-between;
     .admin__logo{
       padding-left: 2rem;
+      margin-block-start: 0;
+      margin-block-end: 0;
     }
     .admin__nav{
       list-style: none;
-      line-height: 10rem;
+      gap: 3rem;
+      display: flex;
+      flex-direction: column;
       .admin__li{
-        padding-left: 1rem;
-        margin-left: 1rem;
+        position: relative;
+        margin: 0 1rem;
+        padding: 1rem;
+        cursor: pointer;
+        background: rgb(43, 45, 55);
+        transition: color 0.8s linear 0.5s;
+      }
+      .admin__li:hover::before{
+        content: '';
+        position: absolute;
+        width: 4px;
+        height: 30px;
+        left: -6px;
+        background: #A55FEB;
       }
       .admin__li:hover{
-        background-color: red;
+        background: linear-gradient(0.25turn, rgb(165, 95, 235), rgba(124, 78, 169,0.8), rgba(84, 58, 109,0.75), rgba(84, 58, 109,0.5), rgba(84, 58, 109,0.25), rgba(84, 58, 109,0.15), rgba(84, 58, 109,0.05), rgba(84, 58, 109,0.05), rgba(84, 58, 109,0.05));
         border-radius: 8px;
+        transition: all;
       }
     }
     .admin__logout{
@@ -31,7 +50,8 @@
     .admin__header{
       display: flex;
       justify-content: space-between;
-      padding: 1rem;
+      padding: 0.5rem 1rem;
+      height: 5rem;
       .admin__config{
         display: flex;
         gap: 10rem;
@@ -41,11 +61,36 @@
           gap: 1rem;
         }
       }
+      .container__profile{
+        gap: 2rem;
+        .profile__image{
+          width: 3.5rem;
+          height: 3.5rem;
+        }
+      }
+    }
+    .admin__title{
+      margin-block-start: 0;
+      margin-block-end: 0;
+      height: 10rem;
     }
     .admin__main{
       display: grid;
-      grid-template-columns: 1fr 3fr;
+      grid-template-columns: 1fr 2fr;
+      overflow-y: scroll;
+      height: calc(100vh - 15rem);
       .admin__tablet{
+        .container__image-medal{
+          position: relative;
+          .image__medal{
+            width: 150px;
+            height: 150px;
+          }
+          .info{
+            position: absolute;
+            right: 0;
+          }
+        }
         .infocard__container{
           display: flex;
         }
@@ -55,7 +100,76 @@
           display: flex;
           justify-content: space-around;
         }
+        .container__sales{
+          .container__image__primary{
+            .image__primary{
+              border-radius: 8px; 
+            }
+          }
+          .container__sale{
+            .image__generic{
+              height: 3.5rem;
+              width: 3.5rem;
+              border-radius: 8px;
+              background-color: #3b70ee;
+            }
+            .image__generic-2{
+              background-color: #e78630;
+            }
+          }
+        }
       }
     }
   }
+}
+.button{
+  background-color: #343644;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+}
+.flex{
+  display: flex;
+}
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.m-0{
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+.align-center{
+  align-items: center;
+}
+.justify-center{
+  justify-content: center;
+}
+.justify-between{
+  justify-content: space-between;
+}
+.text-center{
+  text-align: center;
+}
+.p-1{
+  padding: 2rem;
+}
+.m-4{
+  margin: 1.5rem 2rem;
+}
+.p-4{
+  margin-right: 1rem;
+}
+.w-equal{
+  width: 25%;
+}
+.button-medal{
+  background-color: #3d3e4b;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+}
+.gap-1{
+  gap: 2rem;
 }

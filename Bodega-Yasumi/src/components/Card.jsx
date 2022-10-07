@@ -1,13 +1,17 @@
 import React from "react";
 
-const Card = () => {
+const Card = ({
+  children,
+  title = "TITLE",
+  quantity = "1,350"
+}) => {
   return (
-    <section>
-      <div>
-        ICON
+    <section className="justify-between button w-equal text-center">
+      <div className="button-medal">
+        {children}
       </div>
-      <p>TITLE</p>
-      <p>$1,310</p>
+      <p>{title}</p>
+      <p>{`s/${quantity}`}</p>
     </section>
   )
 }
