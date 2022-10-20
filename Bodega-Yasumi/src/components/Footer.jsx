@@ -1,5 +1,9 @@
 import React from 'react'
 import { FaFacebookF as FaceIcon } from "react-icons/fa";
+import { FaTwitter as TwitterIcon } from "react-icons/fa";
+import { FaInstagram as InstagramIcon } from "react-icons/fa";
+import { AiOutlineSend as SendIcon } from "react-icons/ai";
+
 const Footer = () => {
   return (   
     <footer className="footer">
@@ -28,8 +32,8 @@ const Footer = () => {
                         <h4 className="footer__up--tittle">Síguenos</h4>
                         <div className="footer__up--iconos">
                             <FaceIcon className='icon__contact'/>
-                            <i className='icon__contact bx bxl-instagram-alt'></i>
-                            <i className='icon__contact bx bxl-twitter'></i>
+                            <InstagramIcon className='icon__contact'/>
+                            <TwitterIcon className='icon__contact'/>
                         </div>
                     </div>
                     <div className="footer___up--info hola2">
@@ -37,7 +41,9 @@ const Footer = () => {
                         <p className="footer__texto">suscribe to our newsletter to get latest news about our products</p>
                         <div className="footer__up--email">
                             <input className="footer__up--input" type="text" name="" id="" placeholder="INGRESA TU EMAIL"/>
-                            <a className="footer__up--icon" href=""><i className='icon__send bx bxs-send'></i></a>
+                            <a className="footer__up--icon icon__send" href="">
+                                <SendIcon></SendIcon>
+                            </a>
                         </div>
                     </div>
                 </div>

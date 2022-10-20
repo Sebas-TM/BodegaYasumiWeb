@@ -331,6 +331,9 @@ img {
     background-color: var(--color-letra);
     padding: .5rem;
     border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
 }
 
 .footer__up--email {

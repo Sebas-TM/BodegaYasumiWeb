@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import { FaShoppingCart as CartIcon } from "react-icons/fa";
 
 const Navigation = () => {
     return(
@@ -24,7 +25,7 @@ const Navigation = () => {
                     </button>
                 </nav>
                 <div className="barra__linea__4 no-margin no-padding">
-                    <i className='bx bxs-cart icon icon__cart'></i>
+                    <CartIcon className='icon icon__cart'/>
                 </div>
             </div>
         </>
