@@ -9,6 +9,7 @@ import { BsInfoCircleFill as IconInfo } from "react-icons/bs";
 import { HiHome as IconHome } from "react-icons/hi";
 import { HiUsers as IconUsers } from "react-icons/hi";
 import { FaUser as IconUser } from "react-icons/fa";
+import { AiOutlineCodepenCircle as LogoIcon } from "react-icons/ai";
 import { FaMoneyBillAlt as IconMoney } from "react-icons/fa";
 import Medalla from "../../assets/img/medalla.png"
 
@@ -16,7 +17,9 @@ const Dashboard = () => {
   return (
     <section className='admin'>
       <section className='admin__menu'>
-        <h1 className='admin__logo'>LOGO</h1>
+        <h1 className='admin__logo'>
+          <LogoIcon className="image__logo"/>
+        </h1>
         <nav className='admin__nav'>
           <li className='admin__li'>
             <IconHome className="p-4"/>
