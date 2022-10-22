@@ -1,0 +1,106 @@
+/*Utilidades*/
+
+.centrar-texto {
+  text-align: center;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.boton {
+  background-color: #dd2d38;
+  padding: .8rem;
+  color: var(--blanco);
+  transition: all .2s ease;
+}
+
+.boton:hover {
+  opacity: .9;
+}
+
+
+/*contenido*/
+
+.section {
+  margin-top: 5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 2rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 2rem;
+  }
+}
+
+.productoCard {
+  border: 1px solid rgba(119, 118, 118, 0.2);
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  width: 80%;
+  margin: 0 4rem 3rem 4rem;
+  border-radius: 15px;
+  padding-bottom: 2rem;
+  background-color: var(--blanco);
+}
+
+.contenedor-imagen{
+  padding: 2rem;
+}
+
+.contenedor-texto {
+  border-top: 1px solid rgba(119, 118, 118, 0.2);
+}
+
+.producto__imagen {
+  max-width: 20rem;
+}
+
+.producto__nombre {
+  line-height: 3.5rem;
+  font-family: var(--fuentePrincipal);
+  font-size: 2rem;
+}
+
+.producto__precio {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.producto__precio--titulo {
+  margin: 0;
+  color: var(--color-header-texto);
+  font-weight: 100;
+}
+
+.producto__boton{
+  padding: .85rem 0;
+}
+
+.grid2 {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 4rem;
+}
