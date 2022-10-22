@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Open+Sans&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="css/normalize.css"> -->
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="productStyle.css">
+    <!--<link rel="stylesheet" href="css/index.css">-->
+    <title>Bodega Yasumi</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="contenedor">
+            <div class="barra">
+                <div class="barra__linea__1 ">
+                    <a class="logo" href="index2.html">
+                        <h1 class="logo__nombre no-margin centrar-texto">B<span class="logo__bold">Y</span></h1>
+                    </a>
+                </div>
+                <div class="barra__linea__2">
+                    <p class="header__label" for="buscar"><i class='icon header__icon bx bx-search-alt-2'></i></label>
+                        <input class="header__input" type="text" placeholder="Buscar ...">
+                </div>
+                <nav class="barra__linea__3 ">
+                    <a class="navegacion__enlace" href="">ayuda <i class='icon header__icon bx bxs-help-circle' ></i></a>
+                    <a class="navegacion__enlace" href="">ingresar <i class='icon header__icon bx bxs-lock-alt' ></i></a>
+                    <a class="navegacion__enlace navegacion__enlace--rojo" href="">registrar <i class='icon header__icon bx bxs-user-plus' ></i></a>
+                    <button class="icon__bars">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </button>
+                </nav>
+                <div class="barra__linea__4 no-margin no-padding">
+                    <i class='bx bxs-cart icon icon__cart'></i>
+                </div>
+            </div>
+            <div class="header__texto">
+                <h1 class="header__texto--titulo">Bodega Yasumi</h1>
+                <h4 class="header__texto--descripcion">Gran Variedad de Productos</h4>
+                <a href="" class="header__texto--boton">Conoce más</a>
+            </div>
+        </div>
+
+    </header>
+    <section class="contenedor section">
+        <!-- <h2 class="productos__titulo centrar-texto">PRODUCTOS</h2> -->
+        <div class="grid">
+
+
+
+            <div class="productoCard">
+                <div class="contenedor-imagen">
+                    <img src="img/detergente.jpg" class="producto__imagen" alt="imagen del producto">
+                </div>
+                <div class="contenedor-texto">
+                    <p class="producto__nombre ">Detergente bolivar</p>
+                    <div class="grid2">
+                        <div class="producto__informacion">
+                            <p class="producto__precio--titulo">Precio: </p>
+                            <p class="producto__precio">s/ 4.50</p>
+                        </div>
+                        <div class="producto__boton ">
+                            <a class="boton" href="">Añadir al carrito<i class="producto_icono"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="productoCard">
+                <div class="contenedor-imagen">
+                    <img src="img/jabon.jpg" class="producto__imagen" alt="imagen del producto">
+                </div>
+                <div class="contenedor-texto">
+                    <p class="producto__nombre ">Jabon bolivar</p>
+                    <div class="grid2">
+                        <div class="producto__informacion">
+                            <p class="producto__precio--titulo">Precio: </p>
+                            <p class="producto__precio">s/ 1.80</p>
+                        </div>
+                        <div class="producto__boton ">
+                            <a class="boton" href="">Añadir al carrito<i class="producto_icono"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="productoCard">
+                <div class="contenedor-imagen">
+                    <img src="img/rellenitas.jpg" class="producto__imagen" alt="imagen del producto">
+                </div>
+                <div class="contenedor-texto">
+                    <p class="producto__nombre ">Galleta rellenita</p>
+                    <div class="grid2">
+                        <div class="producto__informacion">
+                            <p class="producto__precio--titulo">Precio: </p>
+                            <p class="producto__precio">s/ 0.50</p>
+                        </div>
+                        <div class="producto__boton ">
+                            <a class="boton" href="">Añadir al carrito<i class="producto_icono"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="productoCard">
+                <div class="contenedor-imagen">
+                    <img src="img/aceite.jpg" class="producto__imagen" alt="imagen del producto">
+                </div>
+                <div class="contenedor-texto">
+                    <p class="producto__nombre ">Aceite primor</p>
+                    <div class="grid2">
+                        <div class="producto__informacion">
+                            <p class="producto__precio--titulo">Precio: </p>
+                            <p class="producto__precio">s/ 9.00</p>
+                        </div>
+                        <div class="producto__boton ">
+                            <a class="boton" href="">Añadir al carrito<i class="producto_icono"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="contenedor">
+            <div class="barra__footer">
+                <div class="footer__up">
+                    <div class="footer___up--info">
+                        <h4 class="footer__up--tittle">informacion del negocio</h4>
+                        <div class="footer__up--options">
+                            <a class="footer__texto" href="">careers</a>
+                            <a class="footer__texto" href="">b2b</a>
+                            <a class="footer__texto" href="">privacy policy</a>
+                            <a class="footer__texto" href="">terms & conditions</a>
+                            <a class="footer__texto" href="">cookies</a>
+                        </div>
+                    </div>
+                    <div class="footer___up--info">
+                        <h4 class="footer__up--tittle">servicio al cliente</h4>
+                        <div class="footer__up--options">
+                            <a class="footer__texto" href="">faq</a>
+                            <a class="footer__texto" href="">contact us</a>
+                            <a class="footer__texto" href="">sizing charts</a>
+                        </div>
+                    </div>
+                    <div class="footer___up--info">
+                        <h4 class="footer__up--tittle">Síguenos</h4>
+                        <div class="footer__up--iconos">
+                            <i class='icon__contact bx bxl-facebook'></i>
+                            <i class='icon__contact bx bxl-instagram-alt'></i>
+                            <i class='icon__contact bx bxl-twitter'></i>
+                        </div>
+                    </div>
+                    <div class="footer___up--info">
+                        <h4 class="footer__up--tittle ">Sign up to vans newsletter</h4>
+                        <p class="footer__texto">suscribe to our newsletter to get latest news about our products</p>
+                        <div class="footer__up--email">
+                            <input class="footer__up--input" type="text" name="" id="" placeholder="INGRESA TU EMAIL">
+                            <a class="footer__up--icon" href=""><i class='icon__send bx bxs-send'></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__down">
+                    <p class="footer__texto">©2022 BODEGA YASUMI - TODOS LOS DERECHOS RESERVADOS</p>
+                    <div class="footer__down--pay">
+                        <i class='icon__pay bx bxl-visa'></i>
+                        <i class='icon__pay bx bxl-mastercard'></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
