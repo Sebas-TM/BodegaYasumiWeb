@@ -1,9 +1,11 @@
+import { Link } from 'react-router-dom';
+
 const Register = () => {
     return (
         <div className="register-wrap">
             <div className="register-html">
                 <input type="radio" name="tab" className="sign-up" /><label htmlFor="tab-2" className="tab">Registrarse</label>
-                <div className="register-form">
+                <form className="register-form">
                     <div className="sign-up-htm">
                         <div className="group">
                             <label htmlFor="user" className="label">Usuario</label>
@@ -22,14 +24,16 @@ const Register = () => {
                             <input id="pass" type="text" className="input" />
                         </div>
                         <div className="group">
-                            <input type="submit" className="button" value="Sign Up" />
+                            <input type="submit" className="button button__register" value="Sign Up" />
                         </div>
                         <div className="hr"></div>
                         <div className="foot-lnk">
-                            <label htmlFor="tab-1"><a>¿Ya tiene una cuenta?</a></label>
+                            <label htmlFor="tab-1">
+                                <Link to='/login'>¿Ya tiene una cuenta?</Link>
+                            </label>
                         </div>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     )
