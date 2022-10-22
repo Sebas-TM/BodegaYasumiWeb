@@ -11,7 +11,7 @@ const Navigation = () => {
                     </a>
                 </div>
                 <div className="barra__linea__2">
-                    <label className="header__label" for="buscar"><i className='icon header__icon bx bx-search-alt-2' ></i></label>
+                    <label className="header__label" htmlFor="buscar"><i className='icon header__icon bx bx-search-alt-2' ></i></label>
                     <input className="header__input" type="text" placeholder="Buscar ..."/>
                 </div>
                 <nav className="barra__linea__3 ">

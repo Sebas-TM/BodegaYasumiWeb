@@ -1,59 +1,31 @@
 const Login = () => {
-    return(
-        <div className="container-login">      
-            <div className="container-form sign-up">
-                <div className="welcome-back">
-                <div className="message">
-                    <h2>Bienvenido</h2>
-                    <p>Si ya tienes una cuenta por favor inicia sesión aquí</p>
-                    <button className="sign-up-btn">Iniciar Sesión</button>
-                </div>
-                </div>
-                <form className="formulario">
-                    <h2 className="create-account">Crear una cuenta</h2>
-                    <div className="iconos">
-                        <div className="border-icon">
-                            <i className='bx bxl-instagram'></i>
+    return (
+        <div className="login-wrap">
+            <div className="login-html">
+                <input type="radio" name="tab" className="sign-in" /><label htmlFor="tab-1" className="tab">Ingresar</label>
+                <div className="login-form">
+                    <div className="sign-in-htm">
+                        <div className="group">
+                            <label htmlFor="user" className="label">Usuario</label>
+                            <input id="user" type="text" className="input" />
                         </div>
-                        <div className="border-icon">
-                            <i className='bx bxl-facebook-circle'></i>
+                        <div className="group">
+                            <label htmlFor="pass" className="label">Contraseña</label>
+                            <input id="pass" type="password" className="input" data-type="password" />
                         </div>
-                        <div className="border-icon">
-                            <i className='bx bxl-linkedin'></i>
+                        <div className="group">
+                            <input id="check" type="checkbox" className="check" />
+                            <label htmlFor="check"><span className="icon"></span>Mantener sesion iniciada</label>
                         </div>
-                    </div>
-                    <p className="cuenta-gratis">Crear una cuenta gratis</p>
-                    <input type="text" placeholder="Nombre"/>
-                    <input type="email" placeholder="Email"/>
-                    <input type="password" placeholder="Contraseña"/>
-                    <input type="button" value="Registrarse"/>
-                </form>
-            <div className="container-form sign-in">
-            <form className="formulario">
-                <h2 className="create-account">Iniciar Sesión</h2>
-                <div className="iconos">
-                    <div className="border-icon">
-                        <i className='bx bxl-instagram'></i>
-                    </div>
-                    <div className="border-icon">
-                        <i className='bx bxl-facebook-circle'></i>
-                    </div>
-                    <div className="border-icon">
-                        <i className='bx bxl-linkedin'></i>
+                        <div className="group">
+                            <input type="submit" className="button" value="Sign In" />
+                        </div>
+                        <div className="hr"></div>
+                        <div className="foot-lnk">
+                            <a href="#htmlForgot">¿Olvidó su contraseña?</a>
+                        </div>
                     </div>
                 </div>
-                <p className="cuenta-gratis">¿Aún no tienes cuenta?</p>
-                <input type="email" placeholder="Email"/>
-                <input type="password" placeholder="Contraseña"/>
-                <input type="button" value="Inciar sesión"/>
-            </form>
-            <div className="welcome-back">
-                <div className="message">
-                    <p>Si aún no tienes una cuenta por favor regístrese aquí</p>
-                    <button className="sign-in-btn">Registrarse</button>
-                </div>
-            </div>
-            </div>
             </div>
         </div>
     )
