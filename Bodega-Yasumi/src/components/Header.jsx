@@ -8,7 +8,7 @@ const Header = () => {
                 <Navigation/>
                 <div className="header__texto">
                     <h1 className="header__texto--titulo">Bodega Yasumi</h1>
-                    <h4 className="header__texto--descripcion">Gran Variedad de Productos</h4>
+                    <h4 className="header__texto--descripcion mb-20">Gran Variedad de Productos</h4>
                     <a href="" className="header__texto--boton">Conoce más</a>
                 </div>
             </header>

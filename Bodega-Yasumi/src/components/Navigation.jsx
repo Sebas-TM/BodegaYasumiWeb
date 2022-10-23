@@ -28,7 +28,7 @@ const Navigation = () => {
                         registrar 
                         <i className='icon header__icon bx bxs-user-plus' />
                     </Link>
-                    <button className="icon__bars">
+                    <button title="Button Icon Bars" className="icon__bars">
                         <div></div>
                         <div></div>
                         <div></div>

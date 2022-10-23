@@ -172,7 +172,7 @@ img {
 
 .barra__linea__3 {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
     border-bottom: 1px solid rgba(255, 255, 255, 0.496);
 }
@@ -320,7 +320,7 @@ img {
 
 .footer__up--iconos {
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     gap: 2rem;
 }
 

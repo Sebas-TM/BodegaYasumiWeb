@@ -41,7 +41,7 @@ const Footer = () => {
                         <p className="footer__texto">suscribe to our newsletter to get latest news about our products</p>
                         <div className="footer__up--email">
                             <input className="footer__up--input" type="text" name="" id="" placeholder="INGRESA TU EMAIL"/>
-                            <a className="footer__up--icon icon__send" href="">
+                            <a className="footer__up--icon icon__send" href="" title='Send Email'>
                                 <SendIcon></SendIcon>
                             </a>
                         </div>
