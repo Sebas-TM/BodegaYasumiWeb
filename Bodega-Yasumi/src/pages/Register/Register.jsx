@@ -4,7 +4,7 @@ const Register = () => {
     return (
         <div className="register-wrap">
             <div className="register-html">
-                <input type="radio" name="tab" className="sign-up" /><label htmlFor="tab-2" className="tab">Registrarse</label>
+                <div className='headerreg'><label htmlFor="tab-2" className="tab">REGISTRARSE</label></div>
                 <form className="register-form">
                     <div className="sign-up-htm">
                         <div className="group">
@@ -24,7 +24,7 @@ const Register = () => {
                             <input id="pass" type="text" className="input" />
                         </div>
                         <div className="group">
-                            <input type="submit" className="button button__register" value="Sign Up" />
+                            <input type="submit" className="button button__register" value="Registrar" />
                         </div>
                         <div className="hr"></div>
                         <div className="foot-lnk">

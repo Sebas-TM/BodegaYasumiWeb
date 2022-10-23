@@ -24,10 +24,10 @@ const Navigation = () => {
                         ingresar 
                         <i className='icon header__icon bx bxs-lock-alt' />
                     </Link>
-                    <a className="navegacion__enlace navegacion__enlace--rojo" href="">
+                    <Link className="navegacion__enlace navegacion__enlace--rojo" to="register">
                         registrar 
                         <i className='icon header__icon bx bxs-user-plus' />
-                    </a>
+                    </Link>
                     <button className="icon__bars">
                         <div></div>
                         <div></div>
