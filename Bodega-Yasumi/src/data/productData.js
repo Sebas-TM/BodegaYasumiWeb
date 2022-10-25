@@ -10,8 +10,18 @@ export const productData = [
     image: 'https://cdn.shopify.com/s/files/1/0460/5558/8007/products/12527333_Morochas_12pack.jpg?v=1664975143'
   },
   {
-    name: 'GAlleta Rellenitas',
+    name: 'Galleta Rellenitas',
     price: 1.9,
     image: 'https://vegaperu.vtexassets.com/arquivos/ids/158229/7750106002721.jpg?v=637660220423370000'
   },
+  {
+    name: 'Durazno Aconcagua',
+    price: 6.8,
+    image: 'https://plazavea.vteximg.com.br/arquivos/ids/553412-1000-1000/965773.jpg'
+  },
+  {
+    name: 'Mermelada de fresa',
+    price: 4.5,
+    image: 'https://plazavea.vteximg.com.br/arquivos/ids/361743-450-450/1125872001.jpg?v=637310302320330000'
+  }
 ]

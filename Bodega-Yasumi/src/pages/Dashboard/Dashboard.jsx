@@ -1,6 +1,6 @@
 import React from "react";
-import Card from "../../components/Card";
-import InfoCard from "../../components/InfoCard";
+import Card from "../../components/generic/Card";
+import InfoCard from "../../components/generic/InfoCard";
 import { FaSignOutAlt as IconLogout} from "react-icons/fa";
 import { FaBars as IconBars} from "react-icons/fa";
 import { MdOutlineDarkMode as IconDark } from "react-icons/md";
