@@ -3,9 +3,14 @@ import { productData } from '../../data/productData'
 import ProductList from './ProductList'
 import useFetchAndLoad from '../../hooks/useFetchAndLoad'
 import { getProducts } from '../../services/product.service'
+import FilterBar from '../bar/FilterBar'
 
 const ProductContainer = () => {
   const [products, setProducts] = useState([])
+  const [order, setOrder] = useState({
+    isOrdened: false,
+    productsOrdened: {}
+  })
   const { loading, callEndpoint } = useFetchAndLoad()
 
   const handleGetProducts = async() => {
@@ -21,7 +26,10 @@ const ProductContainer = () => {
   }, [])
   
   return (
-    <ProductList products={products}/>
+    <>
+      <FilterBar setOrder={setOrder}/>
+      <ProductList products={products}/>
+    </>
   )
 }
 

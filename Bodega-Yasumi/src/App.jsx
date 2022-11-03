@@ -8,6 +8,7 @@ import Dashboard from './pages/Dashboard/Dashboard'
 import Cart from './pages/Cart/Cart'
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
+import PageNotFound from './pages/NotFound/PageNotFound';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path='/cart' element={<Cart />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
+        <Route path='*' element={<PageNotFound/>} />
       </Routes>
     </BrowserRouter>
   )

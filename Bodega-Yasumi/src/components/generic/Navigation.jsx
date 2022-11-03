@@ -34,9 +34,9 @@ const Navigation = () => {
                         <div></div>
                     </button>
                 </nav>
-                <div className="barra__linea__4 no-margin no-padding">
+                <Link to='cart' className="barra__linea__4 no-margin no-padding">
                     <CartIcon className='icon icon__cart'/>
-                </div>
+                </Link>
             </div>
         </>
     )
