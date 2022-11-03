@@ -13,22 +13,31 @@ const ProductContainer = () => {
   })
   const { loading, callEndpoint } = useFetchAndLoad()
 
-  const handleGetProducts = async() => {
+  const handleGetProducts = async () => {
     const response = await callEndpoint(getProducts())
 
     setProducts(response.data.data)
     console.log(response.data.data)
   }
-  
+
   useEffect(() => {
-    // setProducts(productData)
-    handleGetProducts()
+    console.log('Use Effect Runs!')
+
+    callEndpoint(getProducts()).then(res => {
+      setProducts(res.data.data)
+    }).catch(error => {
+
+      if (error.code === 'ERR_CANCELED') {
+        console.log('Request has been ', error.message)
+      }
+
+    })
   }, [])
-  
+
   return (
     <>
-      <FilterBar setOrder={setOrder}/>
-      <ProductList products={products}/>
+      <FilterBar setOrder={setOrder} />
+      <ProductList products={products} />
     </>
   )
 }

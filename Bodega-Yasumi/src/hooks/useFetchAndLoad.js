@@ -28,14 +28,12 @@ const useFetchAndLoad = () => {
 
     const cancelEndpoint = () => {
         setLoading(false)
-
-        controller && controller.abort()
-
+        controller && controller?.abort()
     }
 
     useEffect(() => {
         return () => {
-            callEndpoint()
+            cancelEndpoint()
         }
     }, [])
 
