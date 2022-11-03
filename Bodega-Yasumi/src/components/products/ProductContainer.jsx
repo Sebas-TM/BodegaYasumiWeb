@@ -13,13 +13,6 @@ const ProductContainer = () => {
   })
   const { loading, callEndpoint } = useFetchAndLoad()
 
-  const handleGetProducts = async () => {
-    const response = await callEndpoint(getProducts())
-
-    setProducts(response.data.data)
-    console.log(response.data.data)
-  }
-
   useEffect(() => {
     console.log('Use Effect Runs!')
 
