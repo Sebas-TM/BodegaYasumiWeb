@@ -48,17 +48,17 @@ const Login = () => {
                     </div>
                     <div className="group">
                         <input id="check" type="checkbox" className="check" />
-                        <label htmlFor="check">
+                        <label htmlFor="check" className='group-check_label'>
                             <span className="icon"></span>
                             Mantener sesion iniciada
                         </label>
                     </div>
                     <div className="group">
-                        <input type="submit" className="button" value="Sign In" />
+                        <input type="submit" className="button" value="Ingresar" />
                     </div>
-                    <div className="hr" />
+                    <div className="hr"/>
                     <div className="foot-lnk">
-                        <Link to="/register">¿Olvidó su contraseña?</Link>
+                        <Link to="/register">¿Olvidó su contraseña? | Crear cuenta</Link>
                     </div>
                 </div>
             </form>
