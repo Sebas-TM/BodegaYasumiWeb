@@ -20,7 +20,6 @@
 //     background-position: center;
 //     background-repeat: no-repeat;
 // }
-
 a {
     color: inherit;
     text-decoration: none
@@ -47,11 +46,16 @@ a {
 .register-html {
     // width: 100%;
     // height: 100%;
-    width: 40rem;
-    height: 58rem;
+    width: 70rem;
+    height: 70rem;
     position: absolute;
     padding: 2rem;
     background: #ffffff;
+}
+
+.register-form .sign-up-htm {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .register-html .sign-up-html {
@@ -122,6 +126,10 @@ a {
     background: rgba(255, 255, 255, 0.726);
 }
 
+.comboBox {
+    padding: 1rem;
+}
+
 .register-form .group input[data-type="password"] {
     -webkit-text-security: circle;
 }
@@ -143,7 +151,7 @@ a {
 }
 
 .register-form .group .input {
-    border: 1px solid #7a0707;
+    border: 1.5px solid #7e7b7b;
 }
 
 .register-form .group label .icon {
