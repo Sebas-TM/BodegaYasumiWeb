@@ -1,8 +1,10 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Modal from 'react-modal';
 import { FaExpandAlt as ExpandIcon } from 'react-icons/fa'
 import "../../assets/scss/components/product/productCard.scss";
 import consts from '../../utils/consts'
+import ItemCount from './ItemCount';
+import { CartContext } from "../../context/CartContext";
 
 const customStyles = {
     content: {
@@ -16,13 +18,24 @@ const customStyles = {
 };
 
 const ProductCard = ({
-    name = 'Aceite',
-    price = 4.50,
-    brand = 'Belcorp',
-    description = 'Fam locavore kickstarter distillery. Mixtape chillwave tumeric sriracha taximy chia microdosing tilde DIY. XOXO fam indxgo juiceramps cornhole raw denim forage brooklyn. Everyday carry +1 seitan poutine tumeric. Gastropub blue bottle austin listicle pour-over, neutra jean shorts keytar banjo tattooed umami cardigan.',
-    image = "https://e39a9f00db6c5bc097f9-75bc5dce1d64f93372e7c97ed35869cb.ssl.cf1.rackcdn.com/42757359-7GhlDHOt.jpg",
+    item
 }) => {
+    const cartContext = useContext(CartContext);
+    const { addToCart, cart } = cartContext;
+    console.log('cart',cart);
     const [modalIsOpen, setIsOpen] = useState(false);
+    
+    const itemTemplate = {
+        nombre : 'Aceite',
+        precio : 4.50,
+        brand : 'Belcorp',
+        stock : 10,
+        descripcion : 'Fam locavore kickstarter distillery. Mixtape chillwave tumeric sriracha taximy chia microdosing tilde DIY. XOXO fam indxgo juiceramps cornhole raw denim forage brooklyn. Everyday carry +1 seitan poutine tumeric. Gastropub blue bottle austin listicle pour-over, neutra jean shorts keytar banjo tattooed umami cardigan.',
+        image : "https://e39a9f00db6c5bc097f9-75bc5dce1d64f93372e7c97ed35869cb.ssl.cf1.rackcdn.com/42757359-7GhlDHOt.jpg"
+    }
+
+    const product = {...itemTemplate, ...item};
+     const { nombre, brand, descripcion, precio, stock } = item;
 
     const openModal = () => {
         setIsOpen(true);
@@ -30,6 +43,10 @@ const ProductCard = ({
     const closeModal = () => {
         setIsOpen(false);
     }
+
+    const onAdd = (qty) => {
+        addToCart(product, qty);
+    };
 
     return (
         <div className="productoCard shadow-lg relative">
@@ -45,10 +62,10 @@ const ProductCard = ({
                 <section className="text-gray-600 body-font overflow-hidden">
                     <div className="container px-5 py-24 mx-auto">
                         <div className="lg:w-4/5 mx-auto flex flex-wrap">
-                            <img alt="ecommerce" className="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" src={`${consts.API_PUBLIC}${image}`} />
+                            <img alt="ecommerce" className="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" src={`${consts.API_PUBLIC}${product.Imagen.nombre}`} />
                             <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
-                                <h2 className="text-sm title-font text-gray-500 tracking-widest">{brand.toUpperCase()}</h2>
-                                <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">{name}</h1>
+                                <h2 className="text-sm title-font text-gray-500 tracking-widest">{brand?.toUpperCase()}</h2>
+                                <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">{nombre}</h1>
                                 <div className="flex mb-4">
                                     <span className="flex items-center">
                                         <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
@@ -86,19 +103,20 @@ const ProductCard = ({
                                         </a>
                                     </span>
                                 </div>
-                                <p className="leading-relaxed">{description}</p>
+                                <p className="leading-relaxed">{descripcion}</p>
+                                <ItemCount stock={stock} onAdd={onAdd}/>
                                 <div className="flex mt-8 items-center">
                                     <span className="title-font font-medium text-5xl text-gray-900">
                                         {/* {`s/ ${price.toFixed(2)}`} */}
-                                        {`s/ ${price}`}
+                                        {`s/ ${precio}`}
                                     </span>
-                                    <button className="flex ml-auto text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded">Agregar al carrito</button>
+                                </div>
+                                    {/* <button className="flex ml-auto text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded">Agregar al carrito</button>
                                     <button className="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
                                         <svg fill="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-5 h-5" viewBox="0 0 24 24">
                                             <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"></path>
                                         </svg>
-                                    </button>
-                                </div>
+                                    </button> */}
                             </div>
                         </div>
                     </div>
@@ -106,22 +124,22 @@ const ProductCard = ({
             </Modal>
             <div className="contenedor-imagen">
                 {/* <img src={image} className="producto__imagen" alt="imagen del producto"/> */}
-                <img src={`${consts.API_PUBLIC}${image}`} className="producto__imagen" alt="imagen del producto" />
+                <img src={`${consts.API_PUBLIC}${product.Imagen.nombre}`} className="producto__imagen" alt="imagen del producto" />
             </div>
             <div className="contenedor-texto">
-                <p className="producto__nombre ">{name}</p>
+                <p className="producto__nombre ">{nombre}</p>
                 <div className="grid2">
                     <div className="producto__informacion">
                         <p className="producto__precio--titulo">Precio: </p>
                         {/* <p className="producto__precio">{`s/ ${price.toFixed(2)}`}</p> */}
-                        <p className="producto__precio">{`s/ ${price}`}</p>
+                        <p className="producto__precio">{`s/ ${precio}`}</p>
                     </div>
-                    <div className="producto__boton">
+                    {/* <div className="producto__boton">
                         <a className="boton" href="">
                             Añadir al carrito
                             <i className="producto_icono" />
                         </a>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>

@@ -3,6 +3,7 @@ import "./assets/scss/base/App.scss";
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { lazy, Suspense } from 'react'
+import CartProvider from './context/CartContext';
 
 // import Home from './pages/Home/Home';
 // import Dashboard from './pages/Dashboard/Dashboard'
@@ -13,7 +14,7 @@ import { lazy, Suspense } from 'react'
 
 const Home = lazy(() => import('./pages/Home/Home'))
 const Dashboard = lazy(() => import('./pages/Dashboard/Dashboard'))
-const Cart = lazy(() => import('./pages/Cart/Cart'))
+const CartContainer = lazy(() => import('./pages/Cart/CartContainer'))
 const Login = lazy(() => import('./pages/Login/Login'))
 const Register = lazy(() => import('./pages/Register/Register'))
 const PageNotFound = lazy(() => import('./pages/NotFound/PageNotFound'))
@@ -25,16 +26,18 @@ function App() {
         <p>Page is loading ...</p>
       </div>
     }>
-      <BrowserRouter>
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/dashboard' element={<Dashboard />} />
-          <Route path='/cart' element={<Cart />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/register' element={<Register />} />
-          <Route path='*' element={<PageNotFound />} />
-        </Routes>
-      </BrowserRouter>
+      <CartProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='dashboard' element={<Dashboard />} />
+            <Route path='cart' element={<CartContainer />} />
+            <Route path='login' element={<Login />} />
+            <Route path='register' element={<Register />} />
+            <Route path='*' element={<PageNotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </CartProvider>
     </Suspense>
   )
 }
