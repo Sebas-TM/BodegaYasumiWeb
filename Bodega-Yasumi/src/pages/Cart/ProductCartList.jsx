@@ -9,6 +9,7 @@ const ProductCartList = ({
   totalPrice,
   clear,
 }) => {
+  console.log('totalPrice', totalPrice());
   return (
     <div className='mt-4 flex flex-col justify-center items-center'>
       {items.length ? (

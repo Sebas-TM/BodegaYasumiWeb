@@ -9,8 +9,8 @@ const CartProvider = (props) => {
   // Métodos recomendados para el carrito
   const addItem = (item, qty) => {
     //Agregar cierta cantidad de un item al carrito
-    if (isInCart(item.id)) {
-      let index = cart.findIndex((e) => e.id === item.id);
+    if (isInCart(item.idProducto)) {
+      let index = cart.findIndex((e) => e.idProducto === item.idProducto);
       let product = cart[index];
       product.qty = product.qty + qty;
       const newCart = [...cart];
@@ -25,7 +25,7 @@ const CartProvider = (props) => {
   const totalPrice = () => {
     // Hallar el precio total del carrito
     return cart.reduce((sum, e) => {
-      return sum + e.price * e.qty;
+      return sum + e.precio * e.qty;
     }, 0);
   };
 
@@ -38,7 +38,7 @@ const CartProvider = (props) => {
   const removeItem = (itemId) => {
     //Remover un item del cart por usando su id
     let newCart = [...cart];
-    newCart = newCart.filter((item) => item.id !== itemId);
+    newCart = newCart.filter((item) => item.idProducto !== itemId);
     setCart([...newCart]);
   };
 

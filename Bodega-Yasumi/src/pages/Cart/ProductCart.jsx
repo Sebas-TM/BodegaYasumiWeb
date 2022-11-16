@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import { MdDelete as IconDelete } from "react-icons/md";
+import consts from '../../utils/consts';
 
 const ProductCart = ({
     item, removeItem
@@ -11,7 +12,7 @@ const ProductCart = ({
         <div className="flex flex-wrap gap-4 lg:gap-6 sm:py-2.5">
         <div className="sm:-my-2.5">
             <a href="#" className="group w-24 sm:w-40 h-40 sm:h-56 block bg-gray-100 rounded-lg overflow-hidden relative">
-            <img src={item.Imagen.nombre} loading="lazy" alt="Photo by Thái An" className="w-full h-full object-cover object-center group-hover:scale-110 transition duration-200" />
+            <img src={`${consts.API_PUBLIC}${item.Imagen.nombre}`} loading="lazy" alt="Photo by Thái An" className="w-full h-full object-cover object-center group-hover:scale-110 transition duration-200" />
             </a>
         </div>
 
@@ -42,7 +43,7 @@ const ProductCart = ({
                 className="text-red-500 hover:text-red-5000 active:text-red-700 text-sm font-semibold select-none transition duration-100"
                 onClick={(e) => {
                     e.preventDefault();
-                    removeItem(item.id);
+                    removeItem(item.idProducto);
                 }}>
                 <IconDelete className='text-5xl'/>
             </button>
