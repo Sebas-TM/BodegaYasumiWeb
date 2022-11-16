@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { AiOutlineShoppingCart as CartIcon } from "react-icons/ai";
 import ProductCart from './ProductCart';
+import ProductCart from './Pricings';
 
 const ProductCartList = ({
   items,
@@ -32,24 +33,8 @@ const ProductCartList = ({
               );
             })}
           </div>
-          <section className='mt-16 w-full mobile:w-4/5 mobile:p-0 tablet:w-2/3 laptop:w-full'>
-            <div className='flex flex-col items-center'>
-              <div className='flex justify-between items-center w-full px-4 mobile:w-4/5 tablet:w-2/3 laptop:w-2/5 desktop:w-1/4'>
-                <span>Sub Total:</span>
-                <span className='text-title font-bold text-lg my-2'>{`$${totalPrice()}`}</span>
-              </div>
-              <div className='flex justify-between items-center w-full px-4 mobile:w-4/5 tablet:w-2/3 laptop:w-2/5 desktop:w-1/4'>
-                <span>Shipping:</span>
-                <span className='text-title font-bold text-lg my-2'>{`$5.00`}</span>
-              </div>
-              <hr className='w-full px-4 mobile:w-4/5 tablet:w-2/3 laptop:w-2/5 desktop:w-1/4 my-3 border-dashed border-t-2' />
-              <div className='flex justify-between items-center w-full px-4 mobile:w-4/5 tablet:w-2/3 laptop:w-2/5 desktop:w-1/4'>
-                <span>Total:</span>
-                <span className='text-secondary font-bold text-lg my-2'>{`$${
-                  totalPrice() + 5
-                }`}</span>
-              </div>
-            </div>
+          <section className='mt-16 w-full mobile:w-4/5 mobile:p-0 tablet:w-2/3 laptop:w-full px-8'>
+            <Pricings totalPrice={totalPrice}/>
             <div className='flex flex-col justify-center items-center mx-4 py-8'>
               <button
                 className='my-4 btn btn-outline btn-error'
@@ -57,12 +42,14 @@ const ProductCartList = ({
               >
                 Vaciar carrito
               </button>
-              <Link
-                to='/checkout'
-                className='btn btn-primary bg-secondary border-secondary w-full px-4  mobile:w-4/5 tablet:w-2/3 laptop:w-2/5 desktop:w-1/4 hover:bg-secondary-hover hover:border-none'
-              >
-                Checkout
-              </Link>
+              <div>
+                <Link
+                  to='/payment'
+                  className='btn btn-primary bg-secondary border-secondary w-full px-4  mobile:w-4/5 tablet:w-2/3 laptop:w-2/5 desktop:w-1/4 hover:bg-secondary-hover hover:border-none bg-red-700 p-4 rounded-md text-white'
+                  >
+                  Siguiente
+                </Link>
+              </div>
             </div>
           </section>
         </>

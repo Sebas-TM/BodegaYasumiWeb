@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom"
 import { MdDelete as IconDelete } from "react-icons/md";
 import consts from '../../utils/consts';
 
