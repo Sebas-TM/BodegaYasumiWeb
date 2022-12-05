@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { AiOutlineShoppingCart as CartIcon } from "react-icons/ai";
 import ProductCart from './ProductCart';
-import ProductCart from './Pricings';
+import Pricings from './Pricings';
 
 const ProductCartList = ({
   items,
