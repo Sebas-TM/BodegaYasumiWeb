@@ -12,11 +12,10 @@ const Login = () => {
     const navigator = useNavigate()
 
     const handleLogin = (data) => {
-        console.log(data)
-        
         callEndpoint(login(data)).then(res => {
+            localStorage.setItem('user', JSON.stringify(res.data.user))
+            localStorage.setItem('token', res.data.token)
             navigator('/')
-            console.log(res)
         })
     }
 

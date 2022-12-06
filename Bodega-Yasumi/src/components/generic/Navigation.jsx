@@ -1,7 +1,31 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { FaShoppingCart as CartIcon } from "react-icons/fa";
+import { useEffect } from "react";
+import { useState } from "react";
 
 const Navigation = () => {
+
+    const [user, setUser] = useState({}) 
+
+    const navigator = useNavigate()
+
+    useEffect(() => {
+
+        let user = localStorage.getItem('user')
+        let token = localStorage.getItem('token')
+
+        console.log(JSON.parse(user))
+        console.log(token)
+
+        setUser(JSON.parse(user))
+    }, [])
+
+    const handleLogOut = () => {
+        setUser({})
+        localStorage.clear()
+        navigator('/')
+    }
+
     return(
         <>
             <div className="barra">
@@ -15,19 +39,25 @@ const Navigation = () => {
                     <input className="header__input" type="text" placeholder="Buscar ..."/>
                 </div>
                 <nav className="barra__linea__3 ">
-                    <a className="navegacion__enlace" href="productos.html">
+                    {/* <a className="navegacion__enlace" href="productos.html">
                         ayuda 
                         <i className='icon header__icon bx bxs-help-circle' >
                         </i>
-                    </a>
-                    <Link className="navegacion__enlace" to="login">
-                        ingresar 
-                        <i className='icon header__icon bx bxs-lock-alt' />
-                    </Link>
-                    <Link className="navegacion__enlace navegacion__enlace--rojo" to="register">
-                        registrar 
-                        <i className='icon header__icon bx bxs-user-plus' />
-                    </Link>
+                    </a> */}
+                    {
+                        user?.idUsuario
+                            ? <h5 className="navegacion__enlace"><button onClick={handleLogOut}>Bienvenido {user.nombre}</button></h5>
+                            : <>
+                                <Link className="navegacion__enlace" to="login">
+                                    ingresar 
+                                    <i className='icon header__icon bx bxs-lock-alt' />
+                                </Link>
+                                <Link className="navegacion__enlace navegacion__enlace--rojo" to="register">
+                                    registrar 
+                                    <i className='icon header__icon bx bxs-user-plus' />
+                                </Link>
+                            </>
+                    }
                     <button title="Button Icon Bars" className="icon__bars">
                         <div></div>
                         <div></div>

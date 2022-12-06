@@ -1,7 +1,8 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AiOutlineShoppingCart as CartIcon } from "react-icons/ai";
 import ProductCart from './ProductCart';
 import Pricings from './Pricings';
+import { useEffect, useState } from "react";
 
 const ProductCartList = ({
   items,
@@ -10,7 +11,26 @@ const ProductCartList = ({
   totalPrice,
   clear,
 }) => {
-  console.log('totalPrice', totalPrice());
+  
+  const [user, setUser] = useState({}) 
+
+  const navigator = useNavigate()
+  
+  useEffect(() => {
+
+      let userLocal = localStorage.getItem('user')
+      let token = localStorage.getItem('token')
+
+      if(!userLocal){
+        let response = confirm('Oops al parecer no has iniciado sesión')
+
+        if(response){
+          navigator('/')
+        }
+      }
+      setUser(JSON.parse(userLocal))
+  }, [])
+
   return (
     <div className='mt-4 flex flex-col justify-center items-center'>
       {items.length ? (
