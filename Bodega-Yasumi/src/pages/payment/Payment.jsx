@@ -15,20 +15,20 @@ const Payment = ({
 }) => {
   const cartContext = useContext(CartContext);
   const { cart, totalPrice } = cartContext;
-  const [tipoEntrega, setEntrega] = useState('')
-  const [user, setUser] = useState({})
+  const [isShipping, setShipping] = useState(false)
+  const [userClient, setUser] = useState({})
 
   const navigator = useNavigate()
 
   useEffect(() => {
 
-    let user = localStorage.getItem('user')
-    let token = localStorage.getItem('token')
+    let userLocal = localStorage.getItem('user')
+    let tokenLocal = localStorage.getItem('token')
 
-    if (!user) {
+    if (!userLocal) {
       navigator('/')
     }
-    setUser(JSON.parse(user))
+    setUser(JSON.parse(userLocal))
   }, [])
 
 
@@ -74,17 +74,14 @@ const Payment = ({
             <form>
               <section className='flex gap-4'>
                 {/* <button className='text-xl flex items-center' onClick={(e) => setEntrega('entrega')}> */}
-                <input onClick={(e) => setEntrega('entrega')} className="bg-red-500 p-2 cursor-pointer mr-2" type="radio" id="entrega" name="tipoEntrega" value="entrega" /><label htmlFor="entrega">Envío a domicilio</label>
-                {/* </button> */}
-                {/* <button className='text-xl flex items-center' onClick={(e) => setEntrega('recojo')}> */}
-                <input onClick={(e) => setEntrega('recojo')} className="bg-red-500 p-2 cursor-pointer mr-2" type="radio" id="recojo" name="tipoEntrega" value="recojo" /><label htmlFor="recojo">Recojo en tienda</label>
-                {/* </button> */}
+                <input onClick={() => setShipping(true)} className="bg-red-500 p-2 cursor-pointer mr-2" type="radio" id="entrega" name="tipoEntrega" value="entrega" /><label htmlFor="entrega">Envío a domicilio</label>
+                <input onClick={() => setShipping(false)} className="bg-red-500 p-2 cursor-pointer mr-2" type="radio" id="recojo" name="tipoEntrega" value="recojo" checked/><label htmlFor="recojo">Recojo en tienda</label>
               </section>
               <div className='pt-4'>
                 <input type="date" name="" id="" />
               </div>
               {
-                tipoEntrega === 'entrega' && (
+                isShipping && (
                   <input className='mt-4' type="text" placeholder='Dirección' />
                 )
               }
@@ -96,9 +93,9 @@ const Payment = ({
           </section>
         </section>
         <section className='flex flex-col justify-center gap-4 border-2 p-4 rounded-xl w-1/3 shadow-lg font-sans'>
-          <Pricings totalPrice={totalPrice} />
+          <Pricings isShipping={isShipping} totalPrice={totalPrice} />
           <div className='flex justify-center'>
-            <button type='button' onClick={(e) => handlePayment(e)} className='bg-[#fb3449] text-white py-1 px-8 rounded hover:opacity-75 disabled:bg-slate-400 disabled:cursor-not-allowed' disabled={!tipoEntrega}>Ir a pagar</button>
+            <button type='button' onClick={(e) => handlePayment(e)} className='bg-[#fb3449] text-white py-1 px-8 rounded hover:opacity-75 disabled:bg-slate-400 disabled:cursor-not-allowed'>Ir a pagar</button>
           </div>
         {/* <PaypalButton/> */}
         </section>
