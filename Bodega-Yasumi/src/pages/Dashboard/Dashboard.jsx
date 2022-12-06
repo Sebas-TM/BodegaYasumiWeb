@@ -21,20 +21,9 @@ const Dashboard = () => {
           <LogoIcon className="image__logo"/>
         </h1>
         <nav className='admin__nav'>
-          <li className='admin__li'>
-            <IconHome className="p-4"/>
-            Resumen
-          </li>
-          <li className='admin__li'>
-            <IconUsers className="p-4"/>
-            Usuarios
-          </li>
           <li className='admin__li'>Resumen</li>
-          <li className='admin__li'>Resumen</li>
-          <li className='admin__li'>
-            <IconUser className="p-4"/>
-            Perfil
-          </li>
+          <li className='admin__li'>Usuarios</li>
+          <li className='admin__li'>Perfil</li>
         </nav>
         <div className='admin__logout'>
           <IconLogout className="p-4"/>
@@ -65,7 +54,7 @@ const Dashboard = () => {
         </header>
         <h2 className='admin__title'>Welcome, Mayra</h2>
         <main className='admin__main'>
-          <section className='admin__tablet button p-1'>
+          {/* <section className='admin__tablet button p-1'>
             <div className="container__image-medal flex justify-center">
               <img className="image__medal" src={Medalla} alt="MEDALLA" />
               <IconInfo className="info"/>
@@ -79,7 +68,7 @@ const Dashboard = () => {
             <InfoCard/>
             <InfoCard/>
             <InfoCard/>
-          </section>
+          </section> */}
           <section className='admin__resume'>
             <section className='container__card'>
               <Card>
@@ -94,7 +83,38 @@ const Dashboard = () => {
             </section>
             <section className="container__sales button m-4">
               <div className="container__image__primary flex justify-center">
-                <img className="image__primary" src="https://img.freepik.com/free-vector/space-banner-with-purple-planet-landscape_107791-6230.jpg?w=2000" alt="FOTO" />
+                <div className="overflow-x-auto">
+                  <table className="table w-full">
+                    <thead>
+                      <tr>
+                        <th></th>
+                        <th>Name</th>
+                        <th>Job</th>
+                        <th>Favorite Color</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th>1</th>
+                        <td>Cy Ganderton</td>
+                        <td>Quality Control Specialist</td>
+                        <td>Blue</td>
+                      </tr>
+                      <tr>
+                        <th>2</th>
+                        <td>Hart Hagerty</td>
+                        <td>Desktop Support Technician</td>
+                        <td>Purple</td>
+                      </tr>
+                      <tr>
+                        <th>3</th>
+                        <td>Brice Swyre</td>
+                        <td>Tax Accountant</td>
+                        <td>Red</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
               <section className='container__sale flex justify-between'>
                 <div className='content__sale flex align-center gap-1'>
