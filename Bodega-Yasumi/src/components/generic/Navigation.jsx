@@ -46,7 +46,14 @@ const Navigation = () => {
                     </a> */}
                     {
                         user?.idUsuario
-                            ? <h5 className="navegacion__enlace"><button onClick={handleLogOut}>Bienvenido {user.nombre}</button></h5>
+                            ? 
+                            <>
+                                <Link className="navegacion__enlace" to="purchases">
+                                    Bienvenido {user.nombre}
+                                    <i className='icon header__icon bx bxs-lock-alt' />
+                                </Link>
+                                <h5 className="navegacion__enlace"><button onClick={handleLogOut}>Cerrar Sesión</button></h5>
+                            </>
                             : <>
                                 <Link className="navegacion__enlace" to="login">
                                     ingresar 
