@@ -19,6 +19,8 @@ const Login = lazy(() => import('./pages/Login/Login'))
 const Register = lazy(() => import('./pages/Register/Register'))
 const Payment = lazy(() => import('./pages/payment/Payment'))
 const PageNotFound = lazy(() => import('./pages/NotFound/PageNotFound'))
+const PurchasingContainer = lazy(() => import('./pages/purchasing/PurchasingContainer'))
+const Purchases = lazy(() => import('./pages/purchases/Purchases'))
 
 function App() {
   return (
@@ -36,6 +38,8 @@ function App() {
             <Route path='payment' element={<Payment />} />
             <Route path='login' element={<Login />} />
             <Route path='register' element={<Register />} />
+            <Route path='purchasing' element={<PurchasingContainer />} />
+            <Route path='purchases' element={<Purchases />} />
             <Route path='*' element={<PageNotFound />} />
           </Routes>
         </BrowserRouter>

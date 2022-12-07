@@ -53,7 +53,7 @@ const Payment = ({
       console.log(error)
     })
 
-    navigator('/')
+    navigator('/purchasing')
   }
 
   return (
@@ -64,9 +64,9 @@ const Payment = ({
       <section className='flex justify-center gap-4 m-4'>
         <section className='p-4 border-2 rounded-xl w-1/3 h-48 shadow-lg font-sans'>
           <h1 className='text-3xl pb-4'>Identificación</h1>
-          <p className='text-xl'><span className='font-bold'>Correo: </span>{user.correo}</p>
-          <p className='text-xl'><span className='font-bold'>Nombre: </span>{user.nombre}</p>
-          <p className='text-xl'><span className='font-bold'>Teléfono: </span>{user.telefono}</p>
+          <p className='text-xl'><span className='font-bold'>Correo: </span>{userClient.correo}</p>
+          <p className='text-xl'><span className='font-bold'>Nombre: </span>{userClient.nombre}</p>
+          <p className='text-xl'><span className='font-bold'>Teléfono: </span>{userClient.telefono}</p>
         </section>
         <section className='flex flex-col gap-12 w-1/3 '>
           <section className='p-4 border-2 rounded-xl shadow-lg font-sans'>
@@ -75,7 +75,7 @@ const Payment = ({
               <section className='flex gap-4'>
                 {/* <button className='text-xl flex items-center' onClick={(e) => setEntrega('entrega')}> */}
                 <input onClick={() => setShipping(true)} className="bg-red-500 p-2 cursor-pointer mr-2" type="radio" id="entrega" name="tipoEntrega" value="entrega" /><label htmlFor="entrega">Envío a domicilio</label>
-                <input onClick={() => setShipping(false)} className="bg-red-500 p-2 cursor-pointer mr-2" type="radio" id="recojo" name="tipoEntrega" value="recojo" checked/><label htmlFor="recojo">Recojo en tienda</label>
+                <input onClick={() => setShipping(false)} className="bg-red-500 p-2 cursor-pointer mr-2" type="radio" id="recojo" name="tipoEntrega" value="recojo" defaultChecked/><label htmlFor="recojo">Recojo en tienda</label>
               </section>
               <div className='pt-4'>
                 <input type="date" name="" id="" />
