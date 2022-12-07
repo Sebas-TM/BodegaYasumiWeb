@@ -1,15 +1,24 @@
 import { useEffect, useState } from 'react';
 import { BsFillCheckCircleFill as IconCheck } from "react-icons/bs";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Purchasing = ({ checkout }) => {
   const { fullName, email } = checkout;
   const [ isLoading, setLoading ] = useState(false);
   const name = fullName ? fullName.trim().split(" ")[0] : 'Javier';
 
+  const [user, setUser] = useState({}) 
+
+  const navigator = useNavigate()
+
   useEffect(() => {
+    let user = localStorage.getItem('user')
+    let token = localStorage.getItem('token')
+
+    setUser(JSON.parse(user))
     setTimeout(()=> {
       setLoading(true)
+      navigator('/')
     }, 2500)
   }, [isLoading])
   
@@ -23,11 +32,11 @@ const Purchasing = ({ checkout }) => {
             <h2 className='text-3xl py-2 font-bold text-title'>Gracias</h2>
             <p>Tu pedido se ha enviado.</p>
             <br />
-            <p>{`En unos minutos, recibirás un correo con la confirmación de tu compra, ${name}.`}</p>
+            <p>{`Ahora puedes visualizar esta compra en tu historial, ${user.nombre}.`}</p>
             <br />
             <div>
               <p className='font-light text-sm'>
-                Correo: <span className='font-bold'>{email ? email : 'jabo94454@gmail.com'}</span>
+                Correo: <span className='font-bold'>{user.correo}</span>
               </p>
               <p className='font-light text-sm'>
                 Orden de compra: <span className='font-bold'>2AS56A4SAD68</span>
